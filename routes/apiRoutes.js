@@ -12,4 +12,23 @@ module.exports = function(app) {
       res.json(dbWorkout);
     });
   });
+
+  // router.post
+  // either req, res or body, res 
+  app.post("/api/workouts", ({ body }, res) => {
+    Workout.insertMany(body)
+      .then(dbWorkout => {
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.status(400).json(err);
+      });
+  });
+
+  // app.get("/api/workouts/range", function(req, res) {
+  //   db.Workout.find({}).then(function(dbWorkouts) {
+  //     res.json(dbWorkouts);
+  //   });
+  // });
+
 };
