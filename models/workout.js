@@ -21,9 +21,8 @@ const workoutSchema = new Schema({
   },
   weight:  Number, 
   reps: Number, 
-  sets: {
-    type: Number,
-  }}]
+  sets:  Number
+  }]
 });
 
 const Workout = mongoose.model("Workout", workoutSchema);
